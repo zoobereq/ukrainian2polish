@@ -26,9 +26,9 @@ pynini.cdrewrite(pynini.cross("ський", "ski"), "", "[EOS]", SIGMA_STAR) # '
 
 # rules for <Є> and <є> transcription:
 @ pynini.cdrewrite(pynini.cross("Є", "Je"), pynini.union("[BOS]", " ", "-", ukr_vowels),  "", SIGMA_STAR) 
-# Є --> 'Je' word-initially and post-vocalically 
+# Є --> 'Je' word-initially, after vowels, and after the apostrophe
 @ pynini.cdrewrite(pynini.cross("є", "je"), pynini.union("[BOS]", " ", "-", ukr_vowels), "", SIGMA_STAR) 
-# є --> 'je' word-initially and post-vocalically
+# є --> 'je' word-initially, after vowels, and after the apostrophe
 @ pynini.cdrewrite(pynini.cross("є", "e"), pynini.union("Л", "л"), "", SIGMA_STAR)
 # є --> e after <Л> and <л>
 @ pynini.cdrewrite(pynini.cross("є", "ie"), 
@@ -62,12 +62,13 @@ pynini.union("б", "г", "в", "ґ", "д", "ж", "з", "к", "м", "н", "п", "
 
 
 # rules for <Л> and <л> transcription:
+@ pynini.cdrewrite(pynini.cross("Льо", "Lo"), "", "", SIGMA_STAR) # Льо --> Lo always!
+@ pynini.cdrewrite(pynini.cross("льо", "lo"), "", "", SIGMA_STAR) # льо --> lo always!
 @ pynini.cdrewrite(pynini.cross("Л", "L"), "", pynini.union("я", "є", "ю", "і", "ї", "ь"), SIGMA_STAR)
 # Л --> L before <я>, <є>, <ю>, <і>, <ї>, <ь>
 @ pynini.cdrewrite(pynini.cross("л", "l"), "", pynini.union("я", "є", "ю", "і", "ї", "ь"), SIGMA_STAR)
 # л --> l before <я>, <є>, <ю>, <і>, <ї>, <ь>
 @ pynini.cdrewrite(pynini.cross("Л", "Ł"), "", pynini.union("а", "е", "и", "о", "у", ukr_consonants_lower, "[EOS]"), SIGMA_STAR)
-# @ pynini.cdrewrite(pynini.cross("л", "l"), "", "[EOS]", SIGMA_STAR) # л --> l word-finally
 # Л --> Ł before <а>, <е>, <и>, <о>, <у>, consonants, and word-finally
 @ pynini.cdrewrite(pynini.cross("л", "ł"), "", pynini.union("а", "е", "и", "о", "у", ukr_consonants_lower, "[EOS]"), SIGMA_STAR)
 # л --> ł before <а>, <е>, <и>, <о>, <у>, consonants, and word-finally
@@ -82,8 +83,6 @@ pynini.union("б", "г", "в", "ґ", "д", "ж", "з", "к", "м", "н", "п", "
 @ pynini.cdrewrite(pynini.cross("ц", "ć"), "", "ь", SIGMA_STAR) # ць --> ć palatalization
 @ pynini.cdrewrite(pynini.cross("н", "ń"), "", "ь", SIGMA_STAR) # нь --> ń palatalization
 # Polish forbids <ń> from occuring word-initially and therefore doesn't have to be capitalized
-@ pynini.cdrewrite(pynini.cross("Льо", "Lo"), "", "", SIGMA_STAR) # Льо --> Lo always!
-@ pynini.cdrewrite(pynini.cross("льо", "lo"), "", "", SIGMA_STAR) # льо --> lo always!
 @ pynini.cdrewrite(pynini.cross("о", "io"), "ь", "", SIGMA_STAR) # ьо --> io palatalization
 # Ukrainian forbids the soft sign form occuring word-initially, hence no need to capitalize
 
