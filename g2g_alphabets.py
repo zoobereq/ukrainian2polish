@@ -2,7 +2,6 @@
 
 
 import pynini
-from pynini.lib import byte
 
 
 UKRAINIAN_upper = pynini.union(
@@ -166,7 +165,30 @@ POLISH_upper = pynini.union(
     "Ó",
     "Ś",
     "Ź",
-    "Ż"
+    "Ż",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "R",
+    "S",
+    "T",
+    "U",
+    "W",
+    "Y",
+    "Z"
 )
 
 POLISH_lower = pynini.union(
@@ -179,11 +201,34 @@ POLISH_lower = pynini.union(
     "ó",
     "ś",
     "ź",
-    "ż"
+    "ż",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "r",
+    "s",
+    "t",
+    "u",
+    "w",
+    "y",
+    "z"
 )
 
 # the Polish alphabet
-polish = pynini.union(byte.UPPER, byte.LOWER, POLISH_upper, POLISH_lower)
+polish = pynini.union(POLISH_upper, POLISH_lower)
 
 # the punctuation set
 punctuation = pynini.union(" ", ",", "-")
