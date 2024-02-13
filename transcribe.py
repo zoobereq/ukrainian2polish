@@ -4,7 +4,7 @@
 
 import pynini
 from pynini.lib import rewrite
-from g2g_rules import G2G_transcribe
+from g2g_transcribe_rules import G2G_transcribe
 
 
 def ukr2pl_transcribe(ukrainian_string):
